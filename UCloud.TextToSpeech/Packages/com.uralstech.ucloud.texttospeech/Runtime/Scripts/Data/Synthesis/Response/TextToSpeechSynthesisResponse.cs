@@ -22,6 +22,12 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         public string Audio;
 
         /// <summary>
+        /// A link between a position in the original request input and a corresponding time in the output audio. It's only supported via &lt;mark&gt; of SSML input. Only returned when using the beta API.
+        /// </summary>
+        [JsonProperty("timepoints")]
+        public TextToSpeechSynthesisTimePoint[] TimePoints;
+
+        /// <summary>
         /// The audio metadata for <see cref="Audio"/>. Only returned when using the beta API.
         /// </summary>
         [JsonProperty("audioConfig")]
