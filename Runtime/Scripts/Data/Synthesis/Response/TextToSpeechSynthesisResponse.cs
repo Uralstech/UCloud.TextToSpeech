@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,7 +18,14 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <remarks>
         /// For LINEAR16 audio, we include the WAV header. Note: as with all bytes fields, protobuffers use a pure binary representation, whereas JSON representations use base64.
         /// </remarks>
+        [JsonProperty("audioContent")]
         public string Audio;
+
+        /// <summary>
+        /// The audio metadata for <see cref="Audio"/>. Only returned when using the beta API.
+        /// </summary>
+        [JsonProperty("audioConfig")]
+        public TextToSpeechSynthesisAudioConfiguration AudioConfiguration;
 
         /// <summary>
         /// Converts the base64 encoded audio to an <see cref="AudioClip"/>.
@@ -30,7 +38,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
             AudioType audioType = encoding switch
             {
                 TextToSpeechSynthesisAudioEncoding.WavLinear16 or TextToSpeechSynthesisAudioEncoding.WavMuLaw or TextToSpeechSynthesisAudioEncoding.WavALaw => AudioType.WAV,
-                TextToSpeechSynthesisAudioEncoding.Mp3 => AudioType.MPEG,
+                TextToSpeechSynthesisAudioEncoding.Mp3 or TextToSpeechSynthesisAudioEncoding.Mp3_64Kbps => AudioType.MPEG,
                 _ => throw new IOException($"Unsupported audio format: {encoding}")
             };
 
@@ -44,6 +52,16 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
             return audioClipRequest.result == UnityWebRequest.Result.Success
                 ? DownloadHandlerAudioClip.GetContent(audioClipRequest)
                 : throw new IOException(audioClipRequest.error);
+        }
+
+        /// <summary>
+        /// Converts the base64 encoded audio to an <see cref="AudioClip"/>. Requires the the beta API.
+        /// </summary>
+        /// <returns>The audio converted to an <see cref="AudioClip"/>.</returns>
+        /// <exception cref="IOException">Thrown if <paramref name="encoding"/> is unsupported.</exception>
+        public async Task<AudioClip> ToAudioClip()
+        {
+            return await ToAudioClip(AudioConfiguration?.Encoding ?? TextToSpeechSynthesisAudioEncoding.Default);
         }
     }
 }
