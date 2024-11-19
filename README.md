@@ -1,7 +1,3 @@
----
-_layout: landing
----
-
 # UCloud.TextToSpeech
 
 A Unity C# wrapper for the Google Cloud Text-To-Speech API.
