@@ -12,5 +12,11 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// </summary>
         [JsonProperty("model")]
         public string Model;
+
+        /// <param name="model">See <see cref="Model"/>.</param>
+        public TextToSpeechCustomVoiceParameters(string model)
+        {
+            Model = model;
+        }
     }
 }
