@@ -61,7 +61,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <summary>
         /// 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
         /// Audio content returned as ALAW also contains a WAV header.
-        /// </summary
+        /// </summary>
         [EnumMember(Value = "ALAW")]
         WavALaw
     }
