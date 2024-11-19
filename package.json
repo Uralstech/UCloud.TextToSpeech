@@ -1,0 +1,29 @@
+{
+  "name": "com.uralstech.ucloud.texttospeech",
+  "displayName": "UCloud.TextToSpeech",
+  "description": "A Unity C# wrapper for the Google Cloud Text-To-Speech API.",
+  "keywords": [],
+  "version": "1.0.0-preview.1",
+  "unity": "6000.0",
+  "hideInEditor": false,
+  "documentationUrl": "https://uralstech.github.io/UCloud.TextToSpeech/",
+  "changelogUrl": "https://github.com/Uralstech/UCloud.TextToSpeech/releases",
+  "licensesUrl": "https://github.com/Uralstech/UCloud.TextToSpeech/blob/master/LICENSE",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "repository": "https://github.com/Uralstech/UCloud.TextToSpeech.git"
+  },
+  "author": {
+    "name": "Udayshankar Ravikumar",
+    "url": "https://github.com/Uralstech"
+  },
+  "dependencies": {
+    "com.uralstech.utils.singleton": "1.1.1",
+    "com.uralstech.ucloud.operations": "1.1.5",
+    "com.unity.modules.audio": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.modules.unitywebrequestaudio": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0"
+  }
+}
