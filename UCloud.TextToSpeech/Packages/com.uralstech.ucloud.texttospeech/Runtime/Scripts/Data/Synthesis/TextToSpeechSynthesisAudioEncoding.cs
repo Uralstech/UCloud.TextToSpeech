@@ -54,6 +54,10 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <summary>
         /// 8-bit samples that compand 14-bit audio samples using G.711 PCMU/mu-law.
         /// Audio content returned as MULAW also contains a WAV header.
+        /// 
+        /// <br/><br/>
+        /// This encoding is not supported by the plugin. You will have to
+        /// convert the resulting bytes to an AudioClip yourself.
         /// </summary>
         [EnumMember(Value = "MULAW")]
         WavMuLaw,
@@ -61,6 +65,10 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <summary>
         /// 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
         /// Audio content returned as ALAW also contains a WAV header.
+        /// 
+        /// <br/><br/>
+        /// This encoding is not supported by the plugin. You will have to
+        /// convert the resulting bytes to an AudioClip yourself.
         /// </summary>
         [EnumMember(Value = "ALAW")]
         WavALaw

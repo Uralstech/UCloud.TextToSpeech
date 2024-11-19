@@ -67,5 +67,13 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// </remarks>
         [JsonProperty("effectsProfileId", NullValueHandling = NullValueHandling.Ignore)]
         public TextToSpeechSynthesisProfile[] EffectsProfiles = null;
+
+        public TextToSpeechSynthesisAudioConfiguration() { }
+
+        /// <param name="encoding">See <see cref="Encoding"/>.</param>
+        public TextToSpeechSynthesisAudioConfiguration(TextToSpeechSynthesisAudioEncoding encoding)
+        {
+            Encoding = encoding;
+        }
     }
 }
