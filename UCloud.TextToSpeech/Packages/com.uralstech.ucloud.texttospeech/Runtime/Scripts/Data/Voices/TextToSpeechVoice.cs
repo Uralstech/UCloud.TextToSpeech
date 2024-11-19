@@ -17,7 +17,7 @@ namespace Uralstech.UCloud.TextToSpeech.Voices
         /// The name of this voice. Each distinct voice has a unique name.
         /// </summary>
         [JsonProperty("name")]
-        public string Name;
+        public TextToSpeechVoiceName Name;
 
         /// <summary>
         /// The gender of this voice.
