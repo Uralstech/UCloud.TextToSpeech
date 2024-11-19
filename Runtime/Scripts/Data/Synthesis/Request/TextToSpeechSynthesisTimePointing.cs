@@ -22,7 +22,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         Unspecified,
 
         /// <summary>
-        /// Timepoint information of <mark> tags in SSML input will be returned.
+        /// Timepoint information of &lt;mark&gt; tags in SSML input will be returned.
         /// </summary>
         [EnumMember(Value = "SSML_MARK")]
         SsmlMark,

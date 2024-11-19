@@ -8,7 +8,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
     public class TextToSpeechSynthesisTimePoint
     {
         /// <summary>
-        /// Timepoint name as received from the client within <mark> tag.
+        /// Timepoint name as received from the client within &lt;mark&gt; tag.
         /// </summary>
         [JsonProperty("markName")]
         public string MarkName;
