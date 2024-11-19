@@ -32,7 +32,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// based on the other parameters such as <see cref="LanguageCode"/>.
         /// </remarks>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name = null;
+        public TextToSpeechVoiceName Name = null;
 
         /// <summary>
         /// The preferred gender of the voice.
