@@ -19,9 +19,11 @@ namespace Uralstech.UCloud.TextToSpeech.Voices
         /// <inheritdoc/>
         public string UriParent { get; }
 
+        /// <param name="languageCode">See <see cref="LanguageCode"/>.</param>
         /// <param name="useBetaApi">Should the request use the Beta API?</param>
-        public TextToSpeechVoiceListRequest(bool useBetaApi = false)
+        public TextToSpeechVoiceListRequest(string languageCode = null, bool useBetaApi = false)
         {
+            LanguageCode = languageCode;
             UriParent = useBetaApi ? TextToSpeechManager.BetaApiUri : TextToSpeechManager.ProductionApiUri;
         }
 
