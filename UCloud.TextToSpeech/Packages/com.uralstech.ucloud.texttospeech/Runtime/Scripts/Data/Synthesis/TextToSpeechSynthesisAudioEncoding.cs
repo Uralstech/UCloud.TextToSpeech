@@ -30,6 +30,12 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         Mp3,
 
         /// <summary>
+        /// MP3 at 64kbps. Requires the beta API.
+        /// </summary>
+        [EnumMember(Value = "MP3_64_KBPS")]
+        Mp3_64Kbps,
+
+        /// <summary>
         /// Opus encoded audio wrapped in an ogg container.
         /// </summary>
         /// <remarks>
