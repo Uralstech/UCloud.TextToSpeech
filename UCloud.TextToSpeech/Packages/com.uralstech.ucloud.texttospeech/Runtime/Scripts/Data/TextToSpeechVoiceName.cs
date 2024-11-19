@@ -29,6 +29,8 @@ namespace Uralstech.UCloud.TextToSpeech
         /// </summary>
         public char Id;
 
+        public TextToSpeechVoiceName() { }
+
         /// <param name="name">The name of the voice, in the format: "[<seealso href="https://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP-47</seealso> language code]-[Type]-[ID]".</param>
         public TextToSpeechVoiceName(string name)
         {

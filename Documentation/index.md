@@ -46,6 +46,26 @@ This *should* work on any reasonably modern Unity version. Built and tested in U
 
 Do not use preview versions (i.e. versions that end with "-preview") for production use as they are unstable and untested.
 
+## API Support
+
+- [x] `operations` endpoint\*
+    - [x] `cancel` method\*
+    - [x] `delete` method\*
+
+- [x] `projects.locations` endpoint
+    - [ ] `synthesizeLongAudio` method
+    - [x] `projects.locations.operations` endpoint\*
+        - [x] `get` method\*
+        - [x] `list` method\*
+
+- [x] `text` endpoint
+    - [x] `synthesize` method
+
+- [x] `voices` endpoint
+    - [x] `list` method
+
+\*Through package dependency [UCloud.Operations](https://github.com/Uralstech/UCloud.Operations).
+
 ## Documentation
 
 See <https://uralstech.github.io/UCloud.TextToSpeech/DocSource/QuickStart.html> or `APIReferenceManual.pdf` and `Documentation.pdf` in the package documentation for the reference manual and tutorial.
