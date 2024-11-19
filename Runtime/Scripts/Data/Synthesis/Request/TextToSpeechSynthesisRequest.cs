@@ -25,6 +25,12 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         [JsonProperty("audioConfig")]
         public TextToSpeechSynthesisAudioConfiguration AudioConfiguration;
 
+        /// <summary>
+        /// Whether and what timepoints are returned in the response. Requires the beta API.
+        /// </summary>
+        [JsonProperty("enableTimePointing", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public TextToSpeechSynthesisTimePointing EnableTimePointing = TextToSpeechSynthesisTimePointing.Default;
+
         /// <inheritdoc/>
         [JsonIgnore]
         public string ContentType => "application/json";
