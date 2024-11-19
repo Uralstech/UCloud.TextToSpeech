@@ -24,5 +24,17 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// </remarks>
         [JsonProperty("ssml", NullValueHandling = NullValueHandling.Ignore)]
         public string Ssml = null;
+
+        public TextToSpeechSynthesisInput() { }
+
+        /// <param name="input">The input.</param>
+        /// <param name="isSsml">Is the input SSML or normal text?</param>
+        public TextToSpeechSynthesisInput(string input, bool isSsml = false)
+        {
+            if (isSsml)
+                Ssml = input;
+            else
+                Text = input;
+        }
     }
 }

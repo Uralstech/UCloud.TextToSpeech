@@ -53,5 +53,13 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// </remarks>
         [JsonProperty("customVoice", NullValueHandling = NullValueHandling.Ignore)]
         public TextToSpeechCustomVoiceParameters CustomVoiceParameters = null;
+
+        public TextToSpeechSynthesisVoiceSelection() { }
+
+        /// <param name="languageCode">See <see cref="LanguageCode"/>.</param>
+        public TextToSpeechSynthesisVoiceSelection(string languageCode)
+        {
+            LanguageCode = languageCode;
+        }
     }
 }

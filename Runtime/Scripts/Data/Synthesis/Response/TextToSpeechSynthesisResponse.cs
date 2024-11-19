@@ -31,7 +31,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// The audio metadata for <see cref="Audio"/>. Only returned when using the beta API.
         /// </summary>
         [JsonProperty("audioConfig")]
-        public TextToSpeechSynthesisAudioConfiguration AudioConfiguration;
+        public TextToSpeechSynthesizedAudioMetadata AudioMetadata;
 
         /// <summary>
         /// Converts the base64 encoded audio to an <see cref="AudioClip"/>.
@@ -43,7 +43,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         {
             AudioType audioType = encoding switch
             {
-                TextToSpeechSynthesisAudioEncoding.WavLinear16 or TextToSpeechSynthesisAudioEncoding.WavMuLaw or TextToSpeechSynthesisAudioEncoding.WavALaw => AudioType.WAV,
+                TextToSpeechSynthesisAudioEncoding.WavLinear16 => AudioType.WAV,
                 TextToSpeechSynthesisAudioEncoding.Mp3 or TextToSpeechSynthesisAudioEncoding.Mp3_64Kbps => AudioType.MPEG,
                 _ => throw new IOException($"Unsupported audio format: {encoding}")
             };
@@ -67,7 +67,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <exception cref="IOException">Thrown if <paramref name="encoding"/> is unsupported.</exception>
         public async Task<AudioClip> ToAudioClip()
         {
-            return await ToAudioClip(AudioConfiguration?.Encoding ?? TextToSpeechSynthesisAudioEncoding.Default);
+            return await ToAudioClip(AudioMetadata?.Encoding ?? TextToSpeechSynthesisAudioEncoding.Default);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 
 namespace Uralstech.UCloud.TextToSpeech
 {
@@ -21,7 +22,7 @@ namespace Uralstech.UCloud.TextToSpeech
         /// <summary>
         /// The second part of the name, the type, e.g. Neural2, Journey.
         /// </summary>
-        public string Type;
+        public TextToSpeechVoiceType Type;
 
         /// <summary>
         /// The last part of the name, the single-character ID of the voice.
@@ -33,7 +34,7 @@ namespace Uralstech.UCloud.TextToSpeech
         {
             string[] split = name.Split('-');
             LanguageCode = $"{split[0]}-{split[1]}";
-            Type = split[2];
+            Type = Enum.Parse<TextToSpeechVoiceType>(split[2]);
             Id = split[3][0];
         }
 
