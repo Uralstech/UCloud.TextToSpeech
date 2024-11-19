@@ -20,7 +20,7 @@ namespace Uralstech.UCloud.TextToSpeech
         /// </summary>
         /// <remarks>
         /// In <see cref="Synthesis.TextToSpeechSynthesisVoiceSelection"/>, this means that the client doesn't care which gender the<br/>
-        /// selected voice will have. In the <see cref="Voices.TextToSpeechListVoicesResponse.Voice"/> field of <see cref="Voices.TextToSpeechListVoicesResponse"/>,<br/>
+        /// selected voice will have. In the <see cref="Voices.TextToSpeechVoiceListResponse.Voices"/> field of <see cref="Voices.TextToSpeechVoiceListResponse"/>,<br/>
         /// this may mean that the voice doesn't fit any of the other categories in this enum, or that the gender of the voice isn't known.
         /// </remarks>
         [EnumMember(Value = "SSML_VOICE_GENDER_UNSPECIFIED")]

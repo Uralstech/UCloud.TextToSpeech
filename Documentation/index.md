@@ -32,11 +32,13 @@ This *should* work on any reasonably modern Unity version. Built and tested in U
 2. Select the `+` icon and `Add package from git URL...`
 3. Paste the UPM branch URL and press enter:
     - `https://github.com/Uralstech/UCloud.TextToSpeech.git#upm`
+4. Check the instructions for [`UCloud.Operations`](https://uralstech.github.io/UCloud.Operations) and [`Utils.Singleton`](https://uralstech.github.io/Utils.Singleton) to install the dependencies
 
 # [GitHub Clone](#tab/github)
 
 1. Clone or download the repository from the desired branch (master, preview/unstable)
 2. Drag the package folder `UCloud.TextToSpeech/UCloud.TextToSpeech/Packages/com.uralstech.ucloud.texttospeech` into your Unity project's `Packages` folder
+3. Check the instructions for [`UCloud.Operations`](https://uralstech.github.io/UCloud.Operations) and [`Utils.Singleton`](https://uralstech.github.io/Utils.Singleton) to install the dependencies
 
 ---
 

@@ -73,6 +73,32 @@ namespace Uralstech.UCloud.TextToSpeech
         }
 
         /// <summary>
+        /// Computes a GET request on the TTS API.
+        /// </summary>
+        /// 
+        /// <typeparam name="TResponse">
+        /// The response type. For example, a request of type <see cref="Synthesis.TextToSpeechSynthesisRequest"/> corresponds
+        /// to a response type of <see cref="Synthesis.TextToSpeechSynthesisResponse"/>.
+        /// </typeparam>
+        /// 
+        /// <param name="request">The request object.</param>
+        /// <returns>The computed response.</returns>
+        /// <exception cref="TextToSpeechRequestException">Thrown if the API request fails.</exception>
+        /// <exception cref="TextToSpeechResponseParsingException">Thrown if the response could not be parsed.</exception>
+        public async Task<TResponse> Request<TResponse>(ITextToSpeechGetRequest request)
+        {
+            string requestEndpoint = request.GetEndpointUri();
+
+            using UnityWebRequest webRequest = UnityWebRequest.Get(requestEndpoint);
+            SetupWebRequest(webRequest);
+
+            await webRequest.SendWebRequest();
+            CheckWebRequest(webRequest);
+
+            return ConfirmResponse<TResponse>(webRequest);
+        }
+
+        /// <summary>
         /// Sets up the <see cref="UnityWebRequest"/> with API keys and disposal settings.
         /// </summary>
         /// <param name="webRequest">The request to set up.</param>
