@@ -48,21 +48,21 @@ Do not use preview versions (i.e. versions that end with "-preview") for product
 
 ## API Support
 
-- [x] `operations` endpoint\*
-    - [x] `cancel` method\*
-    - [x] `delete` method\*
+- ✔️ `operations` endpoint\*
+    - ✔️ `cancel` method\*
+    - ✔️ `delete` method\*
 
-- [x] `projects.locations` endpoint
-    - [ ] `synthesizeLongAudio` method
-    - [x] `projects.locations.operations` endpoint\*
-        - [x] `get` method\*
-        - [x] `list` method\*
+- ✔️ `projects.locations` endpoint
+    - ❌ `synthesizeLongAudio` method
+    - ✔️ `projects.locations.operations` endpoint\*
+        - ✔️ `get` method\*
+        - ✔️ `list` method\*
 
-- [x] `text` endpoint
-    - [x] `synthesize` method
+- ✔️ `text` endpoint
+    - ✔️ `synthesize` method
 
-- [x] `voices` endpoint
-    - [x] `list` method
+- ✔️ `voices` endpoint
+    - ✔️ `list` method
 
 \*Through package dependency [UCloud.Operations](https://github.com/Uralstech/UCloud.Operations).
 
