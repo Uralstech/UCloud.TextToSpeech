@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -39,8 +38,9 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// <param name="encoding">The encoding of the audio.</param>
         /// <returns>The audio converted to an <see cref="AudioClip"/>.</returns>
         /// <exception cref="IOException">Thrown if <paramref name="encoding"/> is unsupported.</exception>
-        public async Task<AudioClip> ToAudioClip(TextToSpeechSynthesisAudioEncoding encoding)
+        public async Awaitable<AudioClip> ToAudioClip(TextToSpeechSynthesisAudioEncoding encoding)
         {
+            await Awaitable.MainThreadAsync();
             AudioType audioType = encoding switch
             {
                 TextToSpeechSynthesisAudioEncoding.WavLinear16 => AudioType.WAV,
@@ -50,7 +50,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
 
             string path = Path.Combine(Application.temporaryCachePath, $"{nameof(TextToSpeechSynthesisResponse)}.bin");
             byte[] buffer = Convert.FromBase64String(Audio);
-            File.WriteAllBytes(path, buffer);
+            await File.WriteAllBytesAsync(path, buffer);
 
             using UnityWebRequest audioClipRequest = UnityWebRequestMultimedia.GetAudioClip($"file://{path}", audioType);
             await audioClipRequest.SendWebRequest();
@@ -65,7 +65,7 @@ namespace Uralstech.UCloud.TextToSpeech.Synthesis
         /// </summary>
         /// <returns>The audio converted to an <see cref="AudioClip"/>.</returns>
         /// <exception cref="IOException">Thrown if <paramref name="encoding"/> is unsupported.</exception>
-        public async Task<AudioClip> ToAudioClip()
+        public async Awaitable<AudioClip> ToAudioClip()
         {
             return await ToAudioClip(AudioMetadata?.Encoding ?? TextToSpeechSynthesisAudioEncoding.Default);
         }
