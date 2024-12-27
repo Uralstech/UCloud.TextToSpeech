@@ -7,7 +7,7 @@ A Unity C# wrapper for the Google Cloud Text-To-Speech API.
 
 ## Installation
 
-This *should* work on any reasonably modern Unity version. Built and tested in Unity 6.0.
+Requires Unity 6.0 because of the plugin's usage of [*Awaitable*](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Awaitable.html). Built and tested in Unity 6.0.
 
 ### OpenUPM
 

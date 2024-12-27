@@ -6,6 +6,11 @@
     public enum TextToSpeechVoiceType
     {
         /// <summary>
+        /// Default value, ignore.
+        /// </summary>
+        None,
+
+        /// <summary>
         /// <seealso href="https://cloud.google.com/text-to-speech/docs/voice-types#standard_voices">Standard</seealso>
         /// </summary>
         Standard,
