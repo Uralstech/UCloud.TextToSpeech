@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Uralstech.UCloud.TextToSpeech.Exceptions;
@@ -58,8 +57,9 @@ namespace Uralstech.UCloud.TextToSpeech
         /// <returns>The computed response.</returns>
         /// <exception cref="TextToSpeechRequestException">Thrown if the API request fails.</exception>
         /// <exception cref="TextToSpeechResponseParsingException">Thrown if the response could not be parsed.</exception>
-        public async Task<TResponse> Request<TResponse>(ITextToSpeechPostRequest request)
+        public async Awaitable<TResponse> Request<TResponse>(ITextToSpeechPostRequest request)
         {
+            await Awaitable.MainThreadAsync();
             string utf8RequestData = request.GetUtf8EncodedData();
             string requestEndpoint = request.GetEndpointUri();
 
@@ -85,8 +85,9 @@ namespace Uralstech.UCloud.TextToSpeech
         /// <returns>The computed response.</returns>
         /// <exception cref="TextToSpeechRequestException">Thrown if the API request fails.</exception>
         /// <exception cref="TextToSpeechResponseParsingException">Thrown if the response could not be parsed.</exception>
-        public async Task<TResponse> Request<TResponse>(ITextToSpeechGetRequest request)
+        public async Awaitable<TResponse> Request<TResponse>(ITextToSpeechGetRequest request)
         {
+            await Awaitable.MainThreadAsync();
             string requestEndpoint = request.GetEndpointUri();
 
             using UnityWebRequest webRequest = UnityWebRequest.Get(requestEndpoint);
