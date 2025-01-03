@@ -3,7 +3,7 @@
   "displayName": "UCloud.TextToSpeech",
   "description": "A Unity C# wrapper for the Google Cloud Text-To-Speech API.",
   "keywords": [],
-  "version": "1.2.1",
+  "version": "1.2.2",
   "unity": "6000.0",
   "hideInEditor": false,
   "documentationUrl": "https://uralstech.github.io/UCloud.TextToSpeech/",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "com.uralstech.utils.singleton": "1.1.1",
-    "com.uralstech.ucloud.operations": "1.1.5",
+    "com.uralstech.ucloud.operations": "1.1.6",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.modules.unitywebrequestaudio": "1.0.0",
     "com.unity.modules.unitywebrequest": "1.0.0",
